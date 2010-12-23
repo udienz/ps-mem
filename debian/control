@@ -1,0 +1,17 @@
+Source: psmem
+Section: misc
+Priority: extra
+Maintainer: Mahyuddin Susanto <udienz@gmail.com>
+Build-Depends: debhelper (>= 7), python-minimal
+Standards-Version: 3.8.3
+Homepage: http://www.pixelbeat.org/scripts/ps_mem.py
+
+Package: psmem
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Try to determine how much RAM is currently being used per program
+ Note per _program_, not per process. So for example this script
+ will report RAM used by all httpd process together. In detail it reports:
+ sum(private RAM for program processes) + sum(Shared RAM for program processes)
+ The shared RAM is problematic to calculate, and this script automatically
+ selects the most accurate method available for your kernel.
